@@ -51,12 +51,24 @@
       border: none !important;
       outline: none !important;
     }
-    
+    #top-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffdf8c;
+  font-size: 48px;
+  font-family: 'Segoe UI', sans-serif;
+  text-shadow: 2px 2px 8px black;
+  z-index: 9;
+}
+
   </style>
 </head>
 <body>
 
   <button id="start-btn">Touch Me Not!</button>
+  <h1 id="top-text">Happy Birthday ra Mckuuuuuu🎉</h1>
 
   <script>
     const imageSources = [
@@ -86,6 +98,7 @@
 
     document.getElementById("start-btn").addEventListener("click", () => {
       document.getElementById("start-btn").style.display = "none";
+      document.getElementById("top-text").style.display = "none";
 
       imageSources.forEach((src, i) => {
         const img = document.createElement("img");
