@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Short-Haired Princess Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      overflow: hidden;
+      height: 100vh;
+      position: relative;
+    }
+
+    #start-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 30px 50px;
+      font-size: 30px;
+      border: none;
+      background-color:linear-gradient(to right, #f9d423, #ff4e50);
+      color: black;
+      border-radius: 25px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .spam-image {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border: 3px solid #fff;
+      opacity: 0;
+      transition: opacity 0.5s ease-in;
+    }
+
+    .spam-video {
+      position: absolute;
+      width: 600px;
+      height: 340px;
+      border: 5px solid white;
+      z-index: 15;
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+
+    * {
+      border: none !important;
+      outline: none !important;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <button id="start-btn">Touch Me Not!</button>
+
+  <script>
+    const imageSources = [
+      'im1.jpg',
+      'im2.jpg',
+      'im3.jpg',
+      'im4.jpg',
+      'im5.jpg',
+      'im6.jpg',
+      'm7.jpg',
+      'im8.jpg',
+      'im10.jpg'
+    ];
+
+    const manualPositions = [
+      { x: 1200, y: 50 },
+      { x: 1450, y: 1060 },
+      { x: 900, y: 550 },
+      { x: 1850, y: 470 },
+      { x: 1800, y: 150 },
+      { x: 500, y: 300 },
+      { x: 600, y: 600 },
+      { x: 850, y: 200 },
+      { x: 900, y: 900 }
+      
+    ];
+
+    document.getElementById("start-btn").addEventListener("click", () => {
+      document.getElementById("start-btn").style.display = "none";
+
+      imageSources.forEach((src, i) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.className = "spam-image";
+        img.style.left = manualPositions[i].x + "px";
+        img.style.top = manualPositions[i].y + "px";
+        document.body.appendChild(img);
+
+        setTimeout(() => {
+          img.style.opacity = 1;
+        }, i * 300);
+      });
+
+      const video1 = document.createElement("video");
+      video1.src = "mck.mp4";
+      video1.className = "spam-video";
+      video1.style.top = "100px";
+      video1.style.left = "55%";
+      video1.style.transform = "translateX(-50%)";
+      video1.autoplay = true;
+      video1.muted = false;
+      video1.loop = true;
+      video1.playsInline = true;
+      document.body.appendChild(video1);
+
+      const video2 = document.createElement("video");
+      video2.src = "mck2.mp4";
+      video2.className = "spam-video";
+      video2.style.top = "800px";
+      video2.style.left = "1850px";
+      video2.autoplay = true;
+      video2.muted = false;
+      video2.loop = true;
+      video2.playsInline = true;
+      document.body.appendChild(video2);
+
+      const video3 = document.createElement("video");
+      video3.src = "mck3.mp4";
+      video3.className = "spam-video";
+      video3.style.top = "450px";
+      video3.style.left = "51%";
+      video3.style.transform = "translateX(-50%)";
+      video3.autoplay = true;
+      video3.muted = false;
+      video3.loop = true;
+      video3.playsInline = true;
+      video3.style.width = "1000px";
+      video3.style.height = "600px";
+      document.body.appendChild(video3);
+
+      setTimeout(() => {
+        video1.style.opacity = 1;
+        video2.style.opacity = 1;
+        video3.style.opacity = 1;
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
