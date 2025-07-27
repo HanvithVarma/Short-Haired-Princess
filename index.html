@@ -117,12 +117,13 @@
       video1.src = "mck.mp4";
       video1.className = "spam-video";
       video1.style.top = "100px";
-      video1.style.left = "55%";
+      video1.style.left = "1650px";
       video1.style.transform = "translateX(-50%)";
       video1.autoplay = true;
       video1.muted = false;
       video1.loop = true;
       video1.playsInline = true;
+      video1.style.position = "absolute";
       document.body.appendChild(video1);
 
       const video2 = document.createElement("video");
@@ -134,13 +135,14 @@
       video2.muted = false;
       video2.loop = true;
       video2.playsInline = true;
+      video2.style.position = "absolute";
       document.body.appendChild(video2);
 
       const video3 = document.createElement("video");
       video3.src = "mck3.mp4";
       video3.className = "spam-video";
       video3.style.top = "450px";
-      video3.style.left = "51%";
+      video3.style.left = "1500px";
       video3.style.transform = "translateX(-50%)";
       video3.autoplay = true;
       video3.muted = false;
@@ -148,6 +150,7 @@
       video3.playsInline = true;
       video3.style.width = "1000px";
       video3.style.height = "600px";
+      video3.style.position = "absolute";
       document.body.appendChild(video3);
 
       setTimeout(() => {
